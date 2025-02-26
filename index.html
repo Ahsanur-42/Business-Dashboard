@@ -15,7 +15,7 @@
     <div class="dashboard">
         <!-- Sidebar -->
         <nav class="sidebar">
-            <h2>NM LTD.</h2>
+            <h2>NM CO. LTD.</h2>
             <ul>
                 <li><a href="#" onclick="showSection('home')"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#" onclick="showSection('services')"><i class="fas fa-tools"></i> Services</a></li>
@@ -45,7 +45,22 @@
                     <input type="text" placeholder="Search...">
                     <i class="fas fa-search"></i>
                 </div>
-                <span>Welcome, Nusrat! <img src="/img.jpeg" alt="User"></span>
+                <div class="profile-container">
+                    <span class="profile-name" id="profile-name">Welcome, Nusrat</span>
+                    <img id="profile-img" class="profile-img" src="img.jpeg" alt="Profile">
+
+                    <ul id="context-menu" class="context-menu" role="menu">
+                        <li role="menuitem">
+                            <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        </li>
+                        <li role="menuitem">
+                            <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        </li>
+                        <li role="menuitem">
+                            <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </li>
+                    </ul>
+                </div>
             </header>
 
             <section id="home" class="section active">
@@ -64,6 +79,38 @@
                     </div>
                 </div>
 
+                <div class="stats">
+                    <div class="card">
+                        <h3 class="title">💵 Revenue</h3>
+                        <p class="count" data-target="1200000">$0</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="title">📦 Total Orders</h3>
+                        <p class="count" data-target="850">0</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="title">🔄 Total Workflows</h3>
+                        <p class="count" data-target="45">0</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="title">📢 New Notices</h3>
+                        <p>3 new updates</p>
+                    </div>
+                </div>
+
+                <div class="charts-container">
+                    <div class="chart-card">
+                        <h2>Current Updates</h2>
+                        <ul>
+                            <li>🔹 Server maintenance on March 1st</li>
+                            <li>🔹 New feature rollout in progress</li>
+                        </ul>
+                    </div>
+                    <div class="chart-card">
+                        <h2>Total Management Overview</h2>
+                        <canvas id="managementOverviewChart"></canvas>
+                    </div>
+                </div>
                 <div class="earnings-comparison">
                     <h2>Yearly Earnings Comparison</h2>
                     <div class="stats">
@@ -127,81 +174,80 @@
             </section>
 
             <section id="messages" class="section">
-                <h1>Client Feedback</h1>
+                <h1>Client Messages</h1>
                 <div class="messages">
                     <div class="message-card">
-                        <strong>John Doe:</strong> "Excellent service!" 
-                        <div class="message-details">
-                            <span class="message-time">2025-02-25 14:30</span> | 
-                            <span class="message-location">New York, USA</span>
+                        <div class="profile-pic"> <img src="img.jpeg" alt="img">
+                        </div>
+                        <div class="message-content">
+                            <strong>John Doe:</strong>
+                            <p>"Excellent service! Everything was handled professionally, and I received my order on
+                                time. Highly recommended!"</p>
+                            <div class="message-details">
+                                <span class="message-time">2025-02-25 14:30</span> |
+                                <span class="message-location">New York, USA</span>
+                            </div>
                         </div>
                     </div>
+
                     <div class="message-card">
-                        <strong>Jane Smith:</strong> "Looking forward to working together again." 
-                        <div class="message-details">
-                            <span class="message-time">2025-02-24 11:20</span> | 
-                            <span class="message-location">Los Angeles, USA</span>
+                        <div class="profile-pic"> <img src="img.jpeg" alt="img">
+                        </div>
+                        <div class="message-content">
+                            <strong>Jane Smith:</strong>
+                            <p>"Looking forward to working together again. The service was top-notch, and the team was
+                                very responsive to my needs."</p>
+                            <div class="message-details">
+                                <span class="message-time">2025-02-24 11:20</span> |
+                                <span class="message-location">Los Angeles, USA</span>
+                            </div>
                         </div>
                     </div>
+
                     <div class="message-card">
-                        <strong>Emily Clark:</strong> "Great experience, I will recommend you to others." 
-                        <div class="message-details">
-                            <span class="message-time">2025-02-23 16:10</span> | 
-                            <span class="message-location">Chicago, USA</span>
+                        <div class="profile-pic"> <img src="img.jpeg" alt="img">
+                        </div>
+                        <div class="message-content">
+                            <strong>Emily Clark:</strong>
+                            <p>"Great experience! The support team was helpful, and the product quality exceeded my
+                                expectations. I will definitely recommend it!"</p>
+                            <div class="message-details">
+                                <span class="message-time">2025-02-23 16:10</span> |
+                                <span class="message-location">Chicago, USA</span>
+                            </div>
                         </div>
                     </div>
+
                     <div class="message-card">
-                        <strong>Michael Johnson:</strong> "The product is exactly what I needed!" 
-                        <div class="message-details">
-                            <span class="message-time">2025-02-22 18:00</span> | 
-                            <span class="message-location">Dallas, USA</span>
+                        <div class="profile-pic"> <img src="img.jpeg" alt="img">
+                        </div>
+                        <div class="message-content">
+                            <strong>Michael Johnson:</strong>
+                            <p>"The product is exactly what I needed! Quality is great, and the customer support was
+                                quick to respond to my queries."</p>
+                            <div class="message-details">
+                                <span class="message-time">2025-02-22 18:00</span> |
+                                <span class="message-location">Dallas, USA</span>
+                            </div>
                         </div>
                     </div>
+
                     <div class="message-card">
-                        <strong>Sarah Williams:</strong> "Quick delivery and amazing quality." 
-                        <div class="message-details">
-                            <span class="message-time">2025-02-21 09:15</span> | 
-                            <span class="message-location">Miami, USA</span>
+                        <div class="profile-pic"> <img src="img.jpeg" alt="img">
                         </div>
-                    </div>
-                    <div class="message-card">
-                        <strong>David Brown:</strong> "Very satisfied with the customer service." 
-                        <div class="message-details">
-                            <span class="message-time">2025-02-20 13:45</span> | 
-                            <span class="message-location">San Francisco, USA</span>
-                        </div>
-                    </div>
-                    <div class="message-card">
-                        <strong>Linda Green:</strong> "Had a few issues, but support was great!" 
-                        <div class="message-details">
-                            <span class="message-time">2025-02-19 17:30</span> | 
-                            <span class="message-location">Austin, USA</span>
-                        </div>
-                    </div>
-                    <div class="message-card">
-                        <strong>James Wilson:</strong> "The experience could be improved in some areas." 
-                        <div class="message-details">
-                            <span class="message-time">2025-02-18 10:00</span> | 
-                            <span class="message-location">Boston, USA</span>
-                        </div>
-                    </div>
-                    <div class="message-card">
-                        <strong>Olivia Harris:</strong> "Fantastic service, exceeded expectations!" 
-                        <div class="message-details">
-                            <span class="message-time">2025-02-17 14:45</span> | 
-                            <span class="message-location">Seattle, USA</span>
-                        </div>
-                    </div>
-                    <div class="message-card">
-                        <strong>William Lewis:</strong> "Will be back again for more orders!" 
-                        <div class="message-details">
-                            <span class="message-time">2025-02-16 15:30</span> | 
-                            <span class="message-location">Denver, USA</span>
+                        <div class="message-content">
+                            <strong>Sarah Williams:</strong>
+                            <p>"Quick delivery and amazing quality. I was surprised at how well everything was packaged
+                                and arrived in perfect condition."</p>
+                            <div class="message-details">
+                                <span class="message-time">2025-02-21 09:15</span> |
+                                <span class="message-location">Miami, USA</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            
+
 
             <section id="orders" class="section">
                 <h1>Recent Orders</h1>

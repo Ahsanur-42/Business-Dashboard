@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Business Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <h2>NM LTD.</h2>
+            <ul>
+                <li><a href="#" onclick="showSection('home')"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#" onclick="showSection('services')"><i class="fas fa-tools"></i> Services</a></li>
+                <li><a href="#" onclick="showSection('clients')"><i class="fas fa-user-friends"></i> Clients</a></li>
+                <li><a href="#" onclick="showSection('analytics')"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="#" onclick="showSection('messages')"><i class="fas fa-envelope"></i> Messages</a></li>
+                <li><a href="#" onclick="showSection('orders')"><i class="fas fa-box"></i> Orders</a></li>
+                <li><a href="#" onclick="showSection('events')"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                <li><a href="#" onclick="showSection('sales')"><i class="fas fa-dollar-sign"></i> Sales</a></li>
+                <li><a href="#" onclick="showSection('reports')"><i class="fas fa-file-alt"></i> Reports</a></li>
+                <li><a href="#" onclick="showSection('inventory')"><i class="fas fa-cogs"></i> Inventory</a></li>
+                <li><a href="#" onclick="showSection('marketing')"><i class="fas fa-bullhorn"></i> Marketing
+                        Campaigns</a></li>
+                <li><a href="#" onclick="showSection('employee-performance')"><i class="fas fa-users"></i> Employee
+                        Performance</a></li>
+                <li><a href="#" onclick="showSection('customer-satisfaction')"><i class="fas fa-smile"></i> Customer
+                        Satisfaction</a></li>
+                <li><a href="#" onclick="showSection('budget')"><i class="fas fa-wallet"></i> Budget Overview</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <h1>Dashboard Overview</h1>
+                <div class="search-container">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <span>Welcome, Nusrat! <img src="/img.jpeg" alt="User"></span>
+            </header>
+
+            <section id="home" class="section active">
+                <div class="stats">
+                    <div class="card">
+                        <h3 class="title">💵 Revenue</h3>
+                        <p class="count" data-target="1200000">$0</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="title">👥 Clients</h3>
+                        <p class="count" data-target="500">0</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="title">📁 Projects</h3>
+                        <p class="count" data-target="120">0</p>
+                    </div>
+                </div>
+
+                <div class="earnings-comparison">
+                    <h2>Yearly Earnings Comparison</h2>
+                    <div class="stats">
+                        <div class="card">
+                            <h3 class="title">🏆 Current Year Earnings</h3>
+                            <p class="count" data-target="1500000">$0 <span class="trend up"><i
+                                        class="fas fa-arrow-up"></i> +15%</span></p>
+                        </div>
+                        <div class="card">
+                            <h3 class="title">📅 Previous Year Earnings</h3>
+                            <p class="count" data-target="1300000">$0 <span class="trend down"><i
+                                        class="fas fa-arrow-down"></i> -10%</span></p>
+                        </div>
+                    </div>
+                    <canvas id="earningsComparisonChart"></canvas>
+                </div>
+            </section>
+
+
+            <!-- New Sections for Charts -->
+
+            <section id="global-acceptance" class="section">
+                <h1>Global Acceptance Rate</h1>
+                <canvas id="globalAcceptanceChart"></canvas>
+            </section>
+
+            <section id="country-rank" class="section">
+                <h1>Country Rank</h1>
+                <canvas id="countryRankChart"></canvas>
+            </section>
+
+            <section id="world-rank" class="section">
+                <h1>World Rank</h1>
+                <div class="world-map">
+                    <!-- You can integrate Leaflet or other map visualizations here -->
+                    <p>Display your world ranking or any map visualization here.</p>
+                </div>
+            </section>
+
+            <section id="services" class="section">
+                <h1>Our Services</h1>
+                <ul>
+                    <li>✅ Web Development</li>
+                    <li>📱 Mobile App Development</li>
+                    <li>🛡️ Cybersecurity Solutions</li>
+                </ul>
+            </section>
+
+            <section id="clients" class="section">
+                <h1>Clients</h1>
+                <ul>
+                    <li>🏢 Acme Corp</li>
+                    <li>🏢 Globex Industries</li>
+                    <li>🏢 Initech Solutions</li>
+                </ul>
+            </section>
+
+            <section id="analytics" class="section">
+                <h1>Analytics</h1>
+                <canvas id="pieChart"></canvas>
+            </section>
+
+            <section id="messages" class="section">
+                <h1>Client Feedback</h1>
+                <div class="messages">
+                    <div class="message-card">
+                        <strong>John Doe:</strong> "Excellent service!" 
+                        <div class="message-details">
+                            <span class="message-time">2025-02-25 14:30</span> | 
+                            <span class="message-location">New York, USA</span>
+                        </div>
+                    </div>
+                    <div class="message-card">
+                        <strong>Jane Smith:</strong> "Looking forward to working together again." 
+                        <div class="message-details">
+                            <span class="message-time">2025-02-24 11:20</span> | 
+                            <span class="message-location">Los Angeles, USA</span>
+                        </div>
+                    </div>
+                    <div class="message-card">
+                        <strong>Emily Clark:</strong> "Great experience, I will recommend you to others." 
+                        <div class="message-details">
+                            <span class="message-time">2025-02-23 16:10</span> | 
+                            <span class="message-location">Chicago, USA</span>
+                        </div>
+                    </div>
+                    <div class="message-card">
+                        <strong>Michael Johnson:</strong> "The product is exactly what I needed!" 
+                        <div class="message-details">
+                            <span class="message-time">2025-02-22 18:00</span> | 
+                            <span class="message-location">Dallas, USA</span>
+                        </div>
+                    </div>
+                    <div class="message-card">
+                        <strong>Sarah Williams:</strong> "Quick delivery and amazing quality." 
+                        <div class="message-details">
+                            <span class="message-time">2025-02-21 09:15</span> | 
+                            <span class="message-location">Miami, USA</span>
+                        </div>
+                    </div>
+                    <div class="message-card">
+                        <strong>David Brown:</strong> "Very satisfied with the customer service." 
+                        <div class="message-details">
+                            <span class="message-time">2025-02-20 13:45</span> | 
+                            <span class="message-location">San Francisco, USA</span>
+                        </div>
+                    </div>
+                    <div class="message-card">
+                        <strong>Linda Green:</strong> "Had a few issues, but support was great!" 
+                        <div class="message-details">
+                            <span class="message-time">2025-02-19 17:30</span> | 
+                            <span class="message-location">Austin, USA</span>
+                        </div>
+                    </div>
+                    <div class="message-card">
+                        <strong>James Wilson:</strong> "The experience could be improved in some areas." 
+                        <div class="message-details">
+                            <span class="message-time">2025-02-18 10:00</span> | 
+                            <span class="message-location">Boston, USA</span>
+                        </div>
+                    </div>
+                    <div class="message-card">
+                        <strong>Olivia Harris:</strong> "Fantastic service, exceeded expectations!" 
+                        <div class="message-details">
+                            <span class="message-time">2025-02-17 14:45</span> | 
+                            <span class="message-location">Seattle, USA</span>
+                        </div>
+                    </div>
+                    <div class="message-card">
+                        <strong>William Lewis:</strong> "Will be back again for more orders!" 
+                        <div class="message-details">
+                            <span class="message-time">2025-02-16 15:30</span> | 
+                            <span class="message-location">Denver, USA</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <section id="orders" class="section">
+                <h1>Recent Orders</h1>
+                <ul>
+                    <li>✅ Order #1023 - Pending</li>
+                    <li>🚚 Order #1024 - Shipped</li>
+                </ul>
+            </section>
+
+            <section id="events" class="section">
+                <h1>Upcoming Events</h1>
+                <ul>
+                    <li>📅 Business Summit - March 15</li>
+                    <li>🚀 Product Launch - April 10</li>
+                </ul>
+            </section>
+
+            <section id="sales" class="section">
+                <h1>Sales & Profits</h1>
+                <canvas id="salesChart"></canvas>
+            </section>
+
+            <section id="reports" class="section">
+                <h1>Yearly Reports</h1>
+                <canvas id="reportChart"></canvas>
+            </section>
+
+            <!-- New Sections Added -->
+
+            <section id="inventory" class="section">
+                <h1>Inventory Overview</h1>
+                <p>Manage your product stock levels and ensure everything is up-to-date.</p>
+                <ul>
+                    <li>📦 Product A - 100 units</li>
+                    <li>📦 Product B - 50 units</li>
+                    <li>📦 Product C - 300 units</li>
+                    <li>📦 Product D - 150 units</li>
+                    <li>📦 Product E - 220 units</li>
+                    <li>📦 Product F - 130 units</li>
+                </ul>
+            </section>
+
+            <section id="marketing" class="section">
+                <h1>Marketing Campaigns</h1>
+                <p>Current marketing campaigns and their progress.</p>
+                <ul>
+                    <li>🚀 Spring Sale - 80% completed</li>
+                    <li>📈 Summer Discount Campaign - 50% completed</li>
+                    <li>🎯 Social Media Ads - Running</li>
+                    <li>🚀 Spring Sale (Offer) - 90% completed</li>
+                    <li>📈 Summer Discount Campaign - 50% completed</li>
+                    <li>🎯 Social Media Ads - Running</li>
+                </ul>
+            </section>
+
+            <section id="employee-performance" class="section">
+                <h1>Employee Performance</h1>
+                <p>Track the performance of your team.</p>
+                <ul>
+                    <li>👨‍💻 John - Sales: 120%</li>
+                    <li>👩‍💻 Jane - Sales: 110%</li>
+                    <li>👨‍💼 Mark - Performance: 100%</li>
+                    <li>👨‍💻 John - Sales: 120%</li>
+                    <li>👩‍💻 Jane - Sales: 110%</li>
+                    <li>👨‍💼 Mark - Performance: 100%</li>
+                </ul>
+            </section>
+
+            <section id="customer-satisfaction" class="section">
+                <h1>Customer Satisfaction</h1>
+                <p>Monitor customer satisfaction and gather feedback from our valued customers.</p>
+                <div class="feedback">
+                    <div class="feedback-card">
+                        <strong>Positive Reviews:</strong> 95%
+                        <div class="rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span> <!-- empty star -->
+                        </div>
+                        <p>Great experience overall! Customers love our product.</p>
+                        <p><strong>Customer Name:</strong> John Doe</p>
+                        <p><strong>Date:</strong> 2025-02-25</p>
+                        <p><strong>Time:</strong> 14:30</p>
+                    </div>
+                    <div class="feedback-card">
+                        <strong>Negative Reviews:</strong> 5%
+                        <div class="rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span> <!-- empty star -->
+                            <span class="star">&#9734;</span> <!-- empty star -->
+                        </div>
+                        <p>Some issues with delivery, but we're improving!</p>
+                        <p><strong>Customer Name:</strong> Sarah Smith</p>
+                        <p><strong>Date:</strong> 2025-02-24</p>
+                        <p><strong>Time:</strong> 09:15</p>
+                    </div>
+                    <div class="feedback-card">
+                        <strong>Positive Reviews:</strong> 93%
+                        <div class="rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span> <!-- empty star -->
+                            <span class="star">&#9734;</span> <!-- empty star -->
+                        </div>
+                        <p>Fantastic product, quick service!</p>
+                        <p><strong>Customer Name:</strong> Emily Clark</p>
+                        <p><strong>Date:</strong> 2025-02-23</p>
+                        <p><strong>Time:</strong> 11:45</p>
+                    </div>
+                    <div class="feedback-card">
+                        <strong>Negative Reviews:</strong> 7%
+                        <div class="rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span> <!-- empty star -->
+                            <span class="star">&#9734;</span> <!-- empty star -->
+                            <span class="star">&#9734;</span> <!-- empty star -->
+                        </div>
+                        <p>Service was a bit slow, but the product is good.</p>
+                        <p><strong>Customer Name:</strong> Michael Johnson</p>
+                        <p><strong>Date:</strong> 2025-02-22</p>
+                        <p><strong>Time:</strong> 16:00</p>
+                    </div>
+                    <div class="feedback-card">
+                        <strong>Positive Reviews:</strong> 98%
+                        <div class="rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span> <!-- full star -->
+                        </div>
+                        <p>Great product! Delivery was on time and exceeded expectations.</p>
+                        <p><strong>Customer Name:</strong> Linda Brown</p>
+                        <p><strong>Date:</strong> 2025-02-21</p>
+                        <p><strong>Time:</strong> 13:30</p>
+                    </div>
+                    <div class="feedback-card">
+                        <strong>Negative Reviews:</strong> 2%
+                        <div class="rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span> <!-- empty star -->
+                            <span class="star">&#9734;</span> <!-- empty star -->
+                        </div>
+                        <p>Delivery delay caused some inconvenience, but everything else was good.</p>
+                        <p><strong>Customer Name:</strong> James Wilson</p>
+                        <p><strong>Date:</strong> 2025-02-20</p>
+                        <p><strong>Time:</strong> 08:20</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="budget" class="section">
+                <h1>Budget Overview</h1>
+                <p>Review the current business budget and expenses.</p>
+                <ul>
+                    <li>📊 Marketing Budget: $500,000</li>
+                    <li>📊 Development Budget: $350,000</li>
+                    <li>📊 Operations Budget: $250,000</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

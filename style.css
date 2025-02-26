@@ -1,0 +1,520 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f1f3f6;
+    color: #4b5a6f;
+    font-size: 16px;
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.dashboard .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #2c3e50;
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 40px 25px;
+    color: #ecf0f1;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    /* Softer shadow */
+    z-index: 10;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    color: #ecf0f1;
+    margin-bottom: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin-bottom: 25px;
+}
+
+.sidebar a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 14px 20px;
+    display: block;
+    border-radius: 8px;
+    transition: background-color 0.3s, padding-left 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #34495e;
+    padding-left: 24px;
+}
+
+/* Main Content */
+.main-content {
+    background-color: #f1f3f6;
+    margin-left: 250px;
+    padding: 40px;
+    width: 100%;
+    overflow-y: auto;
+    height: 100vh;
+    background-color: #f1f3f6;
+    /* Updated background-color */
+    border-radius: 12px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+/* Title */
+header h1 {
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+/* Search container */
+.search-container {
+    position: relative;
+}
+
+/* Search input */
+header input {
+    padding: 10px 18px;
+    padding-right: 35px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 280px;
+    color: #34495e;
+    transition: all 0.3s ease;
+}
+
+/* Focus effect for input field */
+header input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Search icon */
+.search-container i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7f8c8d;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect on icon */
+.search-container i:hover {
+    color: #3498db;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* User Span Styling */
+header span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Image Styling */
+header span img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Section Styles */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Card Layout */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    margin-top: 25px;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+/* Card Styling */
+.card,
+.message-card,
+.order-card,
+.event-card,
+.report-card {
+    background-color: #fff;
+    width: 250px;
+    height: 150px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: xx-large;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Count Styling */
+.card .count,
+.message-card .count,
+.order-card .count,
+.event-card .count,
+.report-card .count {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2ecc71;
+    margin-top: 10px;
+}
+
+/* Hover Effect */
+.card:hover,
+.message-card:hover,
+.order-card:hover,
+.event-card:hover,
+.report-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    /* Added slight scaling effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Title Styling */
+.card .title,
+.message-card .title,
+.order-card .title,
+.event-card .title,
+.report-card .title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+/* Details Styling */
+.card .details,
+.message-card .details,
+.order-card .details,
+.event-card .details,
+.report-card .details {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin: 6px 0;
+}
+
+/* Timestamp Styling */
+.card .timestamp,
+.message-card .timestamp,
+.order-card .timestamp,
+.event-card .timestamp,
+.report-card .timestamp {
+    font-size: 14px;
+    color: #95a5a6;
+    margin-top: 6px;
+}
+
+/* Client Name Styling */
+.card .client-name,
+.message-card .client-name,
+.order-card .client-name,
+.event-card .client-name,
+.report-card .client-name {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 8px;
+}
+
+/* Message Section */
+.messages p {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.messages p:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+.messages p .timestamp {
+    font-size: 12px;
+    color: #95a5a6;
+}
+
+/* Orders Section */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+ul li .status {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2ecc71;
+}
+
+/* Events Section */
+ul.event-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.event-list li {
+    background-color: #fff;
+    padding: 18px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ul.event-list li .date {
+    font-size: 15px;
+    font-weight: 600;
+    color: #e74c3c;
+}
+
+ul.event-list li .time {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+ul.event-list li .details {
+    font-size: 14px;
+    color: #34495e;
+    margin-top: 12px;
+}
+
+canvas {
+    width: 100%;
+    height: 300px;
+}
+
+
+
+/* Customer Satisfaction Section */
+#customer-satisfaction {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#customer-satisfaction h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#customer-satisfaction p {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+.feedback {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.feedback-card {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.feedback-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feedback-card strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #2ecc71;
+}
+
+.rating {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 15px;
+}
+
+.star {
+    font-size: 18px;
+    color: #f1c40f;
+    /* Gold color for stars */
+}
+
+.feedback-card p {
+    font-size: 14px;
+    color: #34495e;
+}
+
+.feedback-card p strong {
+    color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+    .feedback-card {
+        width: 100%;
+    }
+}
+
+
+
+/* Client Feedback Section */
+#messages {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#messages h1 {
+    font-size: 24px;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Updated: Removed square box background and borders */
+.message-card {
+    padding: 15px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.message-card strong {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.message-card .message-details {
+    font-size: 14px;
+    color: #7f8c8d;
+    display: flex;
+    gap: 10px;
+}
+
+.message-card .message-time {
+    color: #95a5a6;
+}
+
+.message-card .message-location {
+    color: #7f8c8d;
+}
+
+/* Hover effect without box */
+.message-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    header input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .cards-container {
+        justify-content: center;
+    }
+}
